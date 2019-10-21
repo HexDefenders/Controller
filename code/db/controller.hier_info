@@ -1,0 +1,54 @@
+|controller
+gpins[0] => gpins[0].IN1
+gpins[1] => gpins[1].IN1
+gpins[2] => gpins[2].IN1
+gpins[3] => gpins[3].IN1
+gpins[4] => gpins[4].IN1
+gpins[5] => gpins[5].IN1
+gpins[6] => gpins[6].IN1
+gpins[7] => gpins[7].IN1
+gpins[8] => gpins[8].IN1
+gpins[9] => ~NO_FANOUT~
+gpins[10] => ~NO_FANOUT~
+gpins[11] => ~NO_FANOUT~
+gpins[12] => ~NO_FANOUT~
+gpins[13] => ~NO_FANOUT~
+gpins[14] => ~NO_FANOUT~
+gpins[15] => ~NO_FANOUT~
+gpins[16] => ~NO_FANOUT~
+gpins[17] => ~NO_FANOUT~
+gpins[18] => ~NO_FANOUT~
+gpins[19] => ~NO_FANOUT~
+gpins[20] => ~NO_FANOUT~
+gpins[21] => ~NO_FANOUT~
+gpins[22] => ~NO_FANOUT~
+gpins[23] => ~NO_FANOUT~
+gpins[24] => ~NO_FANOUT~
+gpins[25] => ~NO_FANOUT~
+gpins[26] => ~NO_FANOUT~
+gpins[27] => ~NO_FANOUT~
+gpins[28] => ~NO_FANOUT~
+gpins[29] => ~NO_FANOUT~
+gpins[30] => ~NO_FANOUT~
+gpins[31] => ~NO_FANOUT~
+gpins[32] => ~NO_FANOUT~
+gpins[33] => ~NO_FANOUT~
+gpins[34] => ~NO_FANOUT~
+gpins[35] => ~NO_FANOUT~
+volts[0] << volts[0].DB_MAX_OUTPUT_PORT_TYPE
+volts[1] << <VCC>
+
+
+|controller|single_controller:rctrl
+volts => ~NO_FANOUT~
+sw[0] <= <GND>
+sw[1] <= <GND>
+sw[2] <= <GND>
+sw[3] <= <GND>
+sw[4] <= <GND>
+sw[5] <= <GND>
+sw[6] <= <GND>
+sw[7] <= <GND>
+btn <= <GND>
+
+

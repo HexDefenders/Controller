@@ -1,5 +1,5 @@
 Analysis & Synthesis report for controller
-Tue Oct 15 09:23:26 2019
+Fri Oct 18 09:46:12 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -10,7 +10,14 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Port Connectivity Checks: "single_controller:rctrl"
+ 10. Post-Synthesis Netlist Statistics for Top Partition
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -33,22 +40,27 @@ refer to the applicable agreement for further details.
 
 
 
-+---------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                              ;
-+-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Tue Oct 15 09:23:26 2019           ;
-; Quartus Prime Version       ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
-; Revision Name               ; controller                                  ;
-; Top-level Entity Name       ; controller                                  ;
-; Family                      ; Cyclone V                                   ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
-; Total registers             ; N/A until Partition Merge                   ;
-; Total pins                  ; N/A until Partition Merge                   ;
-; Total virtual pins          ; N/A until Partition Merge                   ;
-; Total block memory bits     ; N/A until Partition Merge                   ;
-; Total PLLs                  ; N/A until Partition Merge                   ;
-; Total DLLs                  ; N/A until Partition Merge                   ;
-+-----------------------------+---------------------------------------------+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Fri Oct 18 09:46:12 2019       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                   ; controller                                  ;
+; Top-level Entity Name           ; controller                                  ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 0                                           ;
+; Total pins                      ; 38                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -59,6 +71,7 @@ refer to the applicable agreement for further details.
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
 ; Top-level entity name                                                           ; controller         ; controller         ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Maximum processors allowed for parallel compilation                             ; 8                  ;                    ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
 ; Enable compact report table                                                     ; Off                ; Off                ;
@@ -144,7 +157,7 @@ refer to the applicable agreement for further details.
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
 ; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
+; Maximum allowed            ; 8           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -154,24 +167,168 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                        ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                          ; Library ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------+---------+
+; controller.v                     ; yes             ; User Verilog HDL File  ; C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v ;         ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary            ;
++---------------------------------------------+----------+
+; Resource                                    ; Usage    ;
++---------------------------------------------+----------+
+; Estimate of Logic utilization (ALMs needed) ; 0        ;
+;                                             ;          ;
+; Combinational ALUT usage for logic          ; 0        ;
+;     -- 7 input functions                    ; 0        ;
+;     -- 6 input functions                    ; 0        ;
+;     -- 5 input functions                    ; 0        ;
+;     -- 4 input functions                    ; 0        ;
+;     -- <=3 input functions                  ; 0        ;
+;                                             ;          ;
+; Dedicated logic registers                   ; 0        ;
+;                                             ;          ;
+; I/O pins                                    ; 38       ;
+;                                             ;          ;
+; Total DSP Blocks                            ; 0        ;
+;                                             ;          ;
+; Maximum fan-out node                        ; gpins[0] ;
+; Maximum fan-out                             ; 1        ;
+; Total fan-out                               ; 38       ;
+; Average fan-out                             ; 0.50     ;
++---------------------------------------------+----------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; |controller                ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 38   ; 0            ; |controller         ; controller  ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "single_controller:rctrl"                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; volts ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; sw    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; btn   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_lcell_comb     ; 1                           ;
+;     normal            ; 1                           ;
+;         0 data inputs ; 1                           ;
+; boundary_port         ; 38                          ;
+;                       ;                             ;
+; Max LUT depth         ; 0.00                        ;
+; Average LUT depth     ; 0.00                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Oct 15 09:23:16 2019
+    Info: Processing started: Fri Oct 18 09:46:02 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Controller -c controller
-Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Error (10170): Verilog HDL syntax error at controller.v(8) near text: "+";  expecting "<=", or "=". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/u1014583/Documents/HD_Controller/controller.v Line: 8
-Error (10170): Verilog HDL syntax error at controller.v(10) near text: "else";  expecting "end". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/u1014583/Documents/HD_Controller/controller.v Line: 10
-Error (10112): Ignored design unit "controller" at controller.v(1) due to previous errors File: C:/Users/u1014583/Documents/HD_Controller/controller.v Line: 1
-Info (12021): Found 0 design units, including 0 entities, in source file controller.v
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 3 errors, 1 warning
-    Error: Peak virtual memory: 4772 megabytes
-    Error: Processing ended: Tue Oct 15 09:23:26 2019
-    Error: Elapsed time: 00:00:10
-    Error: Total CPU time (on all processors): 00:00:21
+Info (20032): Parallel compilation is enabled and will use up to 8 processors
+Warning (20031): Parallel compilation is enabled for 8 processors, but there are only 4 processors in the system. Runtime may increase due to over usage of the processor space.
+Info (12021): Found 2 design units, including 2 entities, in source file controller.v
+    Info (12023): Found entity 1: controller File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 1
+    Info (12023): Found entity 2: single_controller File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 21
+Info (12127): Elaborating entity "controller" for the top level hierarchy
+Info (12128): Elaborating entity "single_controller" for hierarchy "single_controller:rctrl" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 12
+Warning (10034): Output port "sw" at controller.v(24) has no driver File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 24
+Warning (10034): Output port "btn" at controller.v(23) has no driver File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 23
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "volts[0]" is stuck at VCC File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 3
+    Warning (13410): Pin "volts[1]" is stuck at VCC File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 3
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 36 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "gpins[0]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[1]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[2]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[3]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[4]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[5]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[6]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[7]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[8]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[9]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[10]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[11]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[12]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[13]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[14]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[15]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[16]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[17]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[18]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[19]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[20]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[21]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[22]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[23]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[24]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[25]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[26]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[27]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[28]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[29]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[30]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[31]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[32]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[33]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[34]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[35]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
+Info (21057): Implemented 38 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 36 input pins
+    Info (21059): Implemented 2 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 43 warnings
+    Info: Peak virtual memory: 4805 megabytes
+    Info: Processing ended: Fri Oct 18 09:46:12 2019
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:24
 
 
