@@ -1,0 +1,12 @@
+module tb_vga();
+	wire 		  clk, rst;
+	wire [3:0] switches;
+	reg		  hsync, vsync, vga_blank_n, vga_clk;
+	reg  [7:0] r, g, b;
+	
+	vga uut ( .clk(clk), .rst(rst), 
+				 .hsync(hsync), .vsync(vsync), 
+				 .vga_blank_n(vga_blank_n) .vga_clk(vga_clk), 
+				 .switches(switches), .r(r), .g(g), .b(b)     );
+
+endmodule

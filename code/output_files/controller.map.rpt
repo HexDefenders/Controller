@@ -1,5 +1,5 @@
 Analysis & Synthesis report for controller
-Fri Oct 18 09:46:12 2019
+Mon Oct 28 01:35:46 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -14,10 +14,13 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Port Connectivity Checks: "single_controller:rctrl"
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+  9. Parameter Settings for User Entity Instance: mux4:whichPlayer
+ 10. Parameter Settings for User Entity Instance: mux2:playerOrDefault
+ 11. Port Connectivity Checks: "mux2:playerOrDefault"
+ 12. Port Connectivity Checks: "mux4:whichPlayer"
+ 13. Post-Synthesis Netlist Statistics for Top Partition
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
 
 
 
@@ -43,14 +46,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Oct 18 09:46:12 2019       ;
+; Analysis & Synthesis Status     ; Successful - Mon Oct 28 01:35:45 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; controller                                  ;
-; Top-level Entity Name           ; controller                                  ;
+; Top-level Entity Name           ; controllers                                 ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 0                                           ;
-; Total pins                      ; 38                                          ;
+; Total registers                 ; 2                                           ;
+; Total pins                      ; 63                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -69,7 +72,7 @@ refer to the applicable agreement for further details.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; controller         ; controller         ;
+; Top-level entity name                                                           ; controllers        ; controller         ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Maximum processors allowed for parallel compilation                             ; 8                  ;                    ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
@@ -167,49 +170,50 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                        ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                          ; Library ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------+---------+
-; controller.v                     ; yes             ; User Verilog HDL File  ; C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v ;         ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                         ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                           ; Library ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------------+---------+
+; controllers.v                    ; yes             ; User Verilog HDL File  ; C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v ;         ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary            ;
-+---------------------------------------------+----------+
-; Resource                                    ; Usage    ;
-+---------------------------------------------+----------+
-; Estimate of Logic utilization (ALMs needed) ; 0        ;
-;                                             ;          ;
-; Combinational ALUT usage for logic          ; 0        ;
-;     -- 7 input functions                    ; 0        ;
-;     -- 6 input functions                    ; 0        ;
-;     -- 5 input functions                    ; 0        ;
-;     -- 4 input functions                    ; 0        ;
-;     -- <=3 input functions                  ; 0        ;
-;                                             ;          ;
-; Dedicated logic registers                   ; 0        ;
-;                                             ;          ;
-; I/O pins                                    ; 38       ;
-;                                             ;          ;
-; Total DSP Blocks                            ; 0        ;
-;                                             ;          ;
-; Maximum fan-out node                        ; gpins[0] ;
-; Maximum fan-out                             ; 1        ;
-; Total fan-out                               ; 38       ;
-; Average fan-out                             ; 0.50     ;
-+---------------------------------------------+----------+
++-----------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                           ;
++---------------------------------------------+-------------------------+
+; Resource                                    ; Usage                   ;
++---------------------------------------------+-------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 10                      ;
+;                                             ;                         ;
+; Combinational ALUT usage for logic          ; 19                      ;
+;     -- 7 input functions                    ; 0                       ;
+;     -- 6 input functions                    ; 0                       ;
+;     -- 5 input functions                    ; 0                       ;
+;     -- 4 input functions                    ; 2                       ;
+;     -- <=3 input functions                  ; 17                      ;
+;                                             ;                         ;
+; Dedicated logic registers                   ; 2                       ;
+;                                             ;                         ;
+; I/O pins                                    ; 63                      ;
+;                                             ;                         ;
+; Total DSP Blocks                            ; 0                       ;
+;                                             ;                         ;
+; Maximum fan-out node                        ; playerInputVal[0]~input ;
+; Maximum fan-out                             ; 8                       ;
+; Total fan-out                               ; 121                     ;
+; Average fan-out                             ; 0.82                    ;
++---------------------------------------------+-------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; |controller                ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 38   ; 0            ; |controller         ; controller  ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                  ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name               ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------+-------------+--------------+
+; |controllers               ; 19 (11)             ; 2 (2)                     ; 0                 ; 0          ; 63   ; 0            ; |controllers                      ; controllers ; work         ;
+;    |mux2:playerOrDefault|  ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |controllers|mux2:playerOrDefault ; mux2        ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -218,25 +222,53 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 2     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 2     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+-----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "single_controller:rctrl"                                                             ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-; Port  ; Type   ; Severity ; Details                                                                             ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-; volts ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; sw    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; btn   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux4:whichPlayer ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; WIDTH          ; 8     ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux2:playerOrDefault ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; WIDTH          ; 8     ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "mux2:playerOrDefault" ;
++------+-------+----------+------------------------+
+; Port ; Type  ; Severity ; Details                ;
++------+-------+----------+------------------------+
+; d0   ; Input ; Info     ; Stuck at GND           ;
++------+-------+----------+------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mux4:whichPlayer"                                                                                                                        ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                   ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+; s    ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (2 bits) it drives.  Extra input bit(s) "s[1..1]" will be connected to GND. ;
+; s    ; Input ; Info     ; Stuck at VCC                                                                                                                              ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -244,13 +276,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 1                           ;
-;     normal            ; 1                           ;
+; arriav_ff             ; 2                           ;
+;     CLR               ; 2                           ;
+; arriav_lcell_comb     ; 20                          ;
+;     normal            ; 20                          ;
 ;         0 data inputs ; 1                           ;
-; boundary_port         ; 38                          ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 13                          ;
+;         3 data inputs ; 2                           ;
+;         4 data inputs ; 2                           ;
+; boundary_port         ; 63                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 0.00                        ;
-; Average LUT depth     ; 0.00                        ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 1.46                        ;
 +-----------------------+-----------------------------+
 
 
@@ -269,66 +307,80 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Fri Oct 18 09:46:02 2019
+    Info: Processing started: Mon Oct 28 01:35:29 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Controller -c controller
 Info (20032): Parallel compilation is enabled and will use up to 8 processors
 Warning (20031): Parallel compilation is enabled for 8 processors, but there are only 4 processors in the system. Runtime may increase due to over usage of the processor space.
-Info (12021): Found 2 design units, including 2 entities, in source file controller.v
-    Info (12023): Found entity 1: controller File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 1
-    Info (12023): Found entity 2: single_controller File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 21
-Info (12127): Elaborating entity "controller" for the top level hierarchy
-Info (12128): Elaborating entity "single_controller" for hierarchy "single_controller:rctrl" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 12
-Warning (10034): Output port "sw" at controller.v(24) has no driver File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 24
-Warning (10034): Output port "btn" at controller.v(23) has no driver File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 23
+Info (12021): Found 4 design units, including 4 entities, in source file controllers.v
+    Info (12023): Found entity 1: controllers File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 1
+    Info (12023): Found entity 2: single_controller File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 54
+    Info (12023): Found entity 3: mux4 File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 59
+    Info (12023): Found entity 4: mux2 File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 73
+Info (12021): Found 1 design units, including 1 entities, in source file vga_control.v
+    Info (12023): Found entity 1: vga_control File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/vga_control.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file vga.v
+    Info (12023): Found entity 1: vga File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/vga.v Line: 1
+Info (12127): Elaborating entity "controllers" for the top level hierarchy
+Info (12128): Elaborating entity "single_controller" for hierarchy "single_controller:ctrl1" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 11
+Info (12128): Elaborating entity "mux4" for hierarchy "mux4:whichPlayer" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 43
+Info (12128): Elaborating entity "mux2" for hierarchy "mux2:playerOrDefault" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 50
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
+    Warning (13310): Register "playerInput[0]~reg0" is converted into an equivalent circuit using register "playerInput[0]~reg0_emulated" and latch "playerInput[0]~1" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 32
+    Warning (13310): Register "playerInput[1]~reg0" is converted into an equivalent circuit using register "playerInput[1]~reg0_emulated" and latch "playerInput[1]~5" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 32
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "volts[0]" is stuck at VCC File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 3
-    Warning (13410): Pin "volts[1]" is stuck at VCC File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 3
+    Warning (13410): Pin "playerInputFlag" is stuck at VCC File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 5
+Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 36 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "gpins[0]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
-    Warning (15610): No output dependent on input pin "gpins[1]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
-    Warning (15610): No output dependent on input pin "gpins[2]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
-    Warning (15610): No output dependent on input pin "gpins[3]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
-    Warning (15610): No output dependent on input pin "gpins[4]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
-    Warning (15610): No output dependent on input pin "gpins[5]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
-    Warning (15610): No output dependent on input pin "gpins[6]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
-    Warning (15610): No output dependent on input pin "gpins[7]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
-    Warning (15610): No output dependent on input pin "gpins[8]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
-    Warning (15610): No output dependent on input pin "gpins[9]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
-    Warning (15610): No output dependent on input pin "gpins[10]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
-    Warning (15610): No output dependent on input pin "gpins[11]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
-    Warning (15610): No output dependent on input pin "gpins[12]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
-    Warning (15610): No output dependent on input pin "gpins[13]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
-    Warning (15610): No output dependent on input pin "gpins[14]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
-    Warning (15610): No output dependent on input pin "gpins[15]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
-    Warning (15610): No output dependent on input pin "gpins[16]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
-    Warning (15610): No output dependent on input pin "gpins[17]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
-    Warning (15610): No output dependent on input pin "gpins[18]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
-    Warning (15610): No output dependent on input pin "gpins[19]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
-    Warning (15610): No output dependent on input pin "gpins[20]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
-    Warning (15610): No output dependent on input pin "gpins[21]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
-    Warning (15610): No output dependent on input pin "gpins[22]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
-    Warning (15610): No output dependent on input pin "gpins[23]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
-    Warning (15610): No output dependent on input pin "gpins[24]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
-    Warning (15610): No output dependent on input pin "gpins[25]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
-    Warning (15610): No output dependent on input pin "gpins[26]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
-    Warning (15610): No output dependent on input pin "gpins[27]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
-    Warning (15610): No output dependent on input pin "gpins[28]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
-    Warning (15610): No output dependent on input pin "gpins[29]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
-    Warning (15610): No output dependent on input pin "gpins[30]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
-    Warning (15610): No output dependent on input pin "gpins[31]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
-    Warning (15610): No output dependent on input pin "gpins[32]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
-    Warning (15610): No output dependent on input pin "gpins[33]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
-    Warning (15610): No output dependent on input pin "gpins[34]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
-    Warning (15610): No output dependent on input pin "gpins[35]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controller.v Line: 2
-Info (21057): Implemented 38 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 36 input pins
-    Info (21059): Implemented 2 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 43 warnings
-    Info: Peak virtual memory: 4805 megabytes
-    Info: Processing ended: Fri Oct 18 09:46:12 2019
-    Info: Elapsed time: 00:00:10
+Warning (21074): Design contains 39 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "gpins[0]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[1]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[2]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[3]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[4]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[5]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[6]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[7]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[18]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[19]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[20]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[21]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[22]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[23]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[24]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[25]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[27]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[28]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[29]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[30]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[31]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[32]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[33]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 2
+    Warning (15610): No output dependent on input pin "gpins[34]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 2
+    Warning (15610): No output dependent on input pin "playerInputVal[1]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 3
+    Warning (15610): No output dependent on input pin "playerInputVal[2]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 3
+    Warning (15610): No output dependent on input pin "playerInputVal[3]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 3
+    Warning (15610): No output dependent on input pin "playerInputVal[4]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 3
+    Warning (15610): No output dependent on input pin "playerInputVal[5]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 3
+    Warning (15610): No output dependent on input pin "playerInputVal[6]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 3
+    Warning (15610): No output dependent on input pin "playerInputVal[7]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 3
+    Warning (15610): No output dependent on input pin "playerInputVal[8]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 3
+    Warning (15610): No output dependent on input pin "playerInputVal[9]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 3
+    Warning (15610): No output dependent on input pin "playerInputVal[10]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 3
+    Warning (15610): No output dependent on input pin "playerInputVal[11]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 3
+    Warning (15610): No output dependent on input pin "playerInputVal[12]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 3
+    Warning (15610): No output dependent on input pin "playerInputVal[13]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 3
+    Warning (15610): No output dependent on input pin "playerInputVal[14]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 3
+    Warning (15610): No output dependent on input pin "playerInputVal[15]" File: C:/Users/u1014583/Documents/HexDefenders/Controller/code/controllers.v Line: 3
+Info (21057): Implemented 82 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 52 input pins
+    Info (21059): Implemented 11 output pins
+    Info (21061): Implemented 19 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 47 warnings
+    Info: Peak virtual memory: 4843 megabytes
+    Info: Processing ended: Mon Oct 28 01:35:46 2019
+    Info: Elapsed time: 00:00:17
     Info: Total CPU time (on all processors): 00:00:24
 
 

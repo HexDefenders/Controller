@@ -1,0 +1,119 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/u1014583/Documents/School/ECE 3710 - Computer Design Lab/HexDefenders/Controller/VGA/simulation/modelsim
+vbitgen
+Z1 !s110 1572651085
+!i10b 1
+!s100 M5XkbHWL@3]Q^25eH`z;f1
+IjF2C:11QBFM730h3Ma78V2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1572643640
+8C:/Users/u1014583/Documents/School/ECE 3710 - Computer Design Lab/HexDefenders/Controller/VGA/bitgen.v
+FC:/Users/u1014583/Documents/School/ECE 3710 - Computer Design Lab/HexDefenders/Controller/VGA/bitgen.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1572651085.000000
+!s107 C:/Users/u1014583/Documents/School/ECE 3710 - Computer Design Lab/HexDefenders/Controller/VGA/bitgen.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/u1014583/Documents/School/ECE 3710 - Computer Design Lab/HexDefenders/Controller/VGA|C:/Users/u1014583/Documents/School/ECE 3710 - Computer Design Lab/HexDefenders/Controller/VGA/bitgen.v|
+!i113 1
+Z5 o-vlog01compat -work work
+Z6 !s92 -vlog01compat -work work {+incdir+C:/Users/u1014583/Documents/School/ECE 3710 - Computer Design Lab/HexDefenders/Controller/VGA}
+Z7 tCvgOpt 0
+vglyphs
+R1
+!i10b 1
+!s100 hf2Ec:1HHeJMNh0m:B[d13
+I7MA4G=R6OPXf4domg@z8a2
+R2
+R0
+w1572639114
+8C:/Users/u1014583/Documents/School/ECE 3710 - Computer Design Lab/HexDefenders/Controller/VGA/glyphs.v
+FC:/Users/u1014583/Documents/School/ECE 3710 - Computer Design Lab/HexDefenders/Controller/VGA/glyphs.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/u1014583/Documents/School/ECE 3710 - Computer Design Lab/HexDefenders/Controller/VGA/glyphs.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/u1014583/Documents/School/ECE 3710 - Computer Design Lab/HexDefenders/Controller/VGA|C:/Users/u1014583/Documents/School/ECE 3710 - Computer Design Lab/HexDefenders/Controller/VGA/glyphs.v|
+!i113 1
+R5
+R6
+R7
+vtb_vga
+!s110 1572651185
+!i10b 1
+!s100 =KZ8dM;ciN6T0zS=EMlOT2
+I0HkKmk1T2T9Uz>g7<A7CG1
+R2
+R0
+w1572651181
+8C:/Users/u1014583/Documents/School/ECE 3710 - Computer Design Lab/HexDefenders/Controller/VGA/tb_vga.v
+FC:/Users/u1014583/Documents/School/ECE 3710 - Computer Design Lab/HexDefenders/Controller/VGA/tb_vga.v
+L0 3
+R3
+r1
+!s85 0
+31
+!s108 1572651185.000000
+!s107 C:/Users/u1014583/Documents/School/ECE 3710 - Computer Design Lab/HexDefenders/Controller/VGA/tb_vga.v|
+!s90 -reportprogress|300|-work|work|C:/Users/u1014583/Documents/School/ECE 3710 - Computer Design Lab/HexDefenders/Controller/VGA/tb_vga.v|
+!i113 1
+o-work work
+R7
+vvga
+R1
+!i10b 1
+!s100 aNY8g_6`Z=>>bBN?_]8MA0
+IB:kI;^C;cfP[DN]^G5MAM0
+R2
+R0
+w1572640381
+8C:/Users/u1014583/Documents/School/ECE 3710 - Computer Design Lab/HexDefenders/Controller/VGA/vga.v
+FC:/Users/u1014583/Documents/School/ECE 3710 - Computer Design Lab/HexDefenders/Controller/VGA/vga.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/u1014583/Documents/School/ECE 3710 - Computer Design Lab/HexDefenders/Controller/VGA/vga.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/u1014583/Documents/School/ECE 3710 - Computer Design Lab/HexDefenders/Controller/VGA|C:/Users/u1014583/Documents/School/ECE 3710 - Computer Design Lab/HexDefenders/Controller/VGA/vga.v|
+!i113 1
+R5
+R6
+R7
+vvga_control
+R1
+!i10b 1
+!s100 d8aZh^dOl>JO>I<iRGe[_2
+I]5fzVTaRPzUd5jjPZV20d2
+R2
+R0
+w1572632985
+8C:/Users/u1014583/Documents/School/ECE 3710 - Computer Design Lab/HexDefenders/Controller/VGA/vga_control.v
+FC:/Users/u1014583/Documents/School/ECE 3710 - Computer Design Lab/HexDefenders/Controller/VGA/vga_control.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/u1014583/Documents/School/ECE 3710 - Computer Design Lab/HexDefenders/Controller/VGA/vga_control.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/u1014583/Documents/School/ECE 3710 - Computer Design Lab/HexDefenders/Controller/VGA|C:/Users/u1014583/Documents/School/ECE 3710 - Computer Design Lab/HexDefenders/Controller/VGA/vga_control.v|
+!i113 1
+R5
+R6
+R7

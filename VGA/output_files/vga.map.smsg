@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at bitgen.v(20): always construct contains both blocking and non-blocking assignments File: C:/Users/u1014583/Documents/School/ECE 3710 - Computer Design Lab/HexDefenders/Controller/VGA/bitgen.v Line: 20
